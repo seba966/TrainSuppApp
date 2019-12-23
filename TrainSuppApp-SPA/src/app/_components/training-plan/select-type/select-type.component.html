@@ -1,0 +1,28 @@
+<ng-container *ngIf="!selectingPlanMode">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <form #selectingForm="ngForm">
+        <h2 class="text-center text-primary">Wybieranie planu</h2>
+        <hr>
+        <div class="form-group">
+          <label for="typeSelect">Wybierz cel treningowy:</label>
+          <select class="custom-select" id="typeSelect" [(ngModel)]="model.goal" name="typeSelector">
+            <option *ngFor="let g of goals" [ngValue]="g.value">
+              {{g.name}}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group text-center">
+          <button class="btn btn-success btn-block" type="submit" (click)="selectingPlanToggle()">Wybierz plan</button>
+          <button class="btn btn-danger btn-block" type="button" (click)="cancel($event)">Anuluj wybieranie</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</ng-container>
+<!-- ------------------------------------------------------------------------ -->
+<ng-container *ngIf="selectingPlanMode">
+  <app-select-plan (cancelSelectingMode)="finishlSelecting($event)" [currentGoal]="model.goal"></app-select-plan>
+</ng-container>

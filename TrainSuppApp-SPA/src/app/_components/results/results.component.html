@@ -1,0 +1,80 @@
+<div class="container mt-5" *ngIf="!arraysAreEmpty">
+  <div class="row justify-content-center">
+    <h3 class="mb-3">Rezultaty</h3>
+  </div>
+  <div style="display: block">
+    <canvas mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+
+
+  <div class="row justify-content-center">
+    <h3 class="mt-5">Archiwalne dane</h3>
+  </div>
+  <div class="row justify-content-center">
+    <div class="input-group mt-1 mb-1 col-6">
+      <select class="form-control" [(ngModel)]="selectedArchiveId">
+        <option *ngFor="let userArch of userArchives" [ngValue]="userArch.id">
+          {{userArch.created | date: 'yyyy-MM-dd'}}
+        </option>
+      </select>
+      <span class="input-group-btn">
+        <button class="btn btn-success mr-2 ml-3" type="button" (click)="select()">Wybierz</button>
+        <!-- <button class="btn btn-warning" type="button" >Anuluj</button> -->
+      </span>
+    </div>
+  </div>
+  <table class="table table-striped fa-border">
+    <thead>
+      <tr>
+        <th scope="col">Nazwa:</th>
+        <th scope="col">Wartość:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Wiek</td>
+        <td>{{selectedArchive.age}} lat</td>
+      </tr>
+      <tr>
+        <td>Masa ciała</td>
+        <td>{{selectedArchive.weight}} kg</td>
+      </tr>
+      <tr>
+        <td>Wzrost</td>
+        <td>{{selectedArchive.height}} m</td>
+      </tr>
+      <tr>
+        <td>PAL (Wskaźnik aktywności fizycznej)</td>
+        <td>{{selectedArchive.pal}}</td>
+      </tr>
+      <tr>
+        <td>BMI (Współczynnik masy ciała)</td>
+        <td>{{selectedArchive.bmi}}</td>
+      </tr>
+      <tr>
+        <td>Klasyfikacja na podstawie BMI</td>
+        <td>{{selectedArchive.bmIlevel}}</td>
+      </tr>
+      <tr>
+        <td>BMR (Podstawowa przemiana materii)</td>
+        <td>{{selectedArchive.bmr}} kcal</td>
+      </tr>
+      <tr>
+        <td>TEE (Całkowite zapotrzebowanie energetyczne)</td>
+        <td>{{selectedArchive.tee}} kcal</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row justify-content-center">
+
+</div>
+

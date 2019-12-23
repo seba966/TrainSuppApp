@@ -1,0 +1,43 @@
+<form #creatingForm="ngForm">
+  <ng-container *ngIf="!exerciseMode">
+    <h2 class="text-center text-primary">Dodawanie dnia treningowego</h2>
+    <hr>
+
+    <div class="form-group">
+      <label for="typeSelect">Wybierz dzień:</label>
+      <select class="custom-select" id="typeSelect" [(ngModel)]="day.name" name="typeSelector">
+        <option *ngFor="let d of daysOfWeek">
+          {{d}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button id="addDay" type="button" class="btn btn-block btn-success" (click)="exerciseToggle()">Dodaj ćwiczenia dla dnia: {{day.name}}</button>
+    </div>
+
+    <!-- <div class="form-group">
+        <label for="TrainingDays">Dodane ćwiczenia:</label>
+        <div class="card border-primary mb-3">
+          <div class="card-body">
+            <p class="card-text">Wyciskanie</p>
+            <p class="card-text">Przysiad</p>
+            <p class="card-text">Podciąganie</p>
+          </div>
+        </div>
+    </div> -->
+
+    <div class="form-group">
+      <button class="btn btn-danger btn-block" type="button" (click)="cancel()">Zacznij od nowa</button>
+    </div>
+  </ng-container>
+</form>
+<!--  -->
+<!--  -->
+<!--  -->
+<ng-container *ngIf="exerciseMode">
+  <app-add-exercise [planId]="plan.id"(cancelExercise)="cancelExerciseMode($event)" (cancelCreatingPlan)="cancel()" (finishCreatingPlan)="finishCreating($event)"></app-add-exercise>
+</ng-container>
+<!-- ======================================================================================================== -->
+
+

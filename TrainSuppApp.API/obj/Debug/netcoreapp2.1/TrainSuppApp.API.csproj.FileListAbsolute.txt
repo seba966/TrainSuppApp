@@ -1,0 +1,14 @@
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\bin\Debug\netcoreapp2.1\TrainSuppApp.API.deps.json
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\bin\Debug\netcoreapp2.1\TrainSuppApp.API.runtimeconfig.json
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\bin\Debug\netcoreapp2.1\TrainSuppApp.API.runtimeconfig.dev.json
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\bin\Debug\netcoreapp2.1\TrainSuppApp.API.dll
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\bin\Debug\netcoreapp2.1\TrainSuppApp.API.pdb
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.csprojAssemblyReference.cache
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.csproj.CoreCompileInputs.cache
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.RazorAssemblyInfo.cache
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.RazorAssemblyInfo.cs
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.AssemblyInfoInputs.cache
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.AssemblyInfo.cs
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.RazorTargetAssemblyInfo.cache
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.dll
+D:\Inżynierka\TrainingSupportApp\TrainSuppApp.API\obj\Debug\netcoreapp2.1\TrainSuppApp.API.pdb

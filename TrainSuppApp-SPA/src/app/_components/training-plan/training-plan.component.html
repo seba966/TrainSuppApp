@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <div *ngIf="!creatingMode && !selectingMode && isChecked && days.length==0" style="text-align: center">
+    <h2>Nie masz jeszcze swojego planu</h2>
+    <hr>
+    <div class="text-center pt-3">
+      <button class="btn btn-secondary btn-lg" (click)="creatingToggle()">Stwórz nowy plan</button>
+      <br>
+      <br>
+      <button class="btn btn-secondary btn-lg" (click)="selectingToggle()">Wybierz gotowe rozwiązanie</button>
+    </div>
+  </div>
+  <!-- ----------------------------------------------------------------------------------------------------------------------------->
+  <!-- ----------------------------------------------------------------------------------------------------------------------------->
+  <div *ngIf="creatingMode" class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <app-create-plan (cancelCreating)="cancelCreatingMode($event)" (finishCreatingPlan)="cancelCreatingMode($event)"></app-create-plan>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selectingMode" class="container">
+    <app-select-type (cancelSelecting)="cancelSelectingMode($event)"></app-select-type>
+  </div>
+</div>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<div class="container mt-5 text-center">
+  <!-- <p>DUPERELE</p>
+  <p>plan {{currentPlanId}}</p>
+  <p>current user id {{currentUserId}}</p>
+  <p> days.length: {{days.length}}</p>
+  <p> sampleplanid: {{plan.samplePlanId}}</p> -->
+
+
+  <!-- style="width: 14rem;" -->
+
+  <ng-container *ngIf="days.length>0">
+    <div class="text-center"><h3 class="mt-5 mb-3">Obecny plan treningowy</h3></div>
+    <div class="card-group text-center">
+      <div *ngFor="let day of days" class="card shadow-sm">
+        <div class="card-header text-center">
+          {{day.name}}
+        </div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let exercise of day.exercises" class="list-group-item text-center">
+            <p>{{exercise.name}}</p>
+            <p>({{exercise.sets}})</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button *ngIf="!creatingMode" class="btn btn-danger mt-3 mb-3" (click)="dropPlan()">Usuń obecny plan</button>
+  </ng-container>
+
+</div>

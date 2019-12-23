@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="text-center text-primary">Wybieranie planu</h2>
+  <hr>
+  <div class="row justify-content-center">
+    <button class="btn btn-danger btn-block col-4" type="button" (click)="cancel($event)">Anuluj wybieranie planu</button>
+  </div>
+  <!-- {{samplePlans}}
+  <div *ngFor="let plans of samplePlans">
+    <h2>{{plans.name}}</h2>
+    <div *ngFor="let day of plans.days">
+      <h3>{{day.name}}</h3>
+      <div *ngFor="let exercise of day.exercises">
+       <h5>{{exercise.name}}</h5>
+      </div>
+    </div>
+  </div> -->
+  <ng-container *ngFor="let plan of samplePlans">
+    <h3 class="mt-5 mb-2 text-center">{{plan.name}}</h3>
+    <div class="row justify-content-center mb-2">
+      <button class="btn btn-success btn-block col-4" type="button" (click)="finishSelecting(plan.id)">Wybierz ten plan</button>
+    </div>
+    <div class="card-group text-center">
+      <div *ngFor="let day of plan.days" class="card shadow-sm">
+        <div class="card-header text-center">
+          {{day.name}}
+        </div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let exercise of day.exercises" class="list-group-item text-center">
+            <p>{{exercise.name}}</p>
+            <p>({{exercise.sets}})</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+</div>

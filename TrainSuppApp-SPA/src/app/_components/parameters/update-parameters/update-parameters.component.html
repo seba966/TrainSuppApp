@@ -1,0 +1,30 @@
+<form #registerForm="ngForm" (ngSubmit)="update()">
+  <h2 class="text-center text-info">Aktualizacja</h2>
+  <h5 class="text-center">zmień wybrane wartości</h5>
+  <hr>
+
+  <div class="form-group">
+    <label>Podaj masę ciała w kilogrmach: (np. 68.4)</label>
+    <input id="weight" type="text" class="form-control" required name="weight" [(ngModel)]="model.weight" placeholder="masa [kg]">
+  </div>
+
+  <div class="form-group">
+    <label>Podaj wzrost w metrach: (np. 1.75)</label>
+    <input id="height" type="text" class="form-control" required name="height" [(ngModel)]="model.height" placeholder="wzrost [m]">
+  </div>
+
+  <div class="form-group">
+    <label>Wybierz stopień aktywności fizycznej (PAL):</label>
+    <select class="custom-select" [(ngModel)]="model.pal" required name="gener-select">
+      <option *ngFor="let pal of pals" [ngValue]="pal.value">
+        {{pal.text}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group text-center">
+    <button class="btn btn-success mr-2" type="submit">Aktualizuj</button>
+    <button class="btn btn-warning" type="button" (click)="cancel()">Anuluj</button>
+  </div>
+
+</form>

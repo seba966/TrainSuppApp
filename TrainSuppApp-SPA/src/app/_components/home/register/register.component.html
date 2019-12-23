@@ -1,0 +1,50 @@
+<form #registerForm="ngForm" (ngSubmit)="register()">
+    <h2 class="text-center text-primary">Rejestracja</h2>
+    <h5 class="text-center">musisz wypełnić wszystkie pola</h5>
+    <hr>
+
+    <div class="form-group">
+      <label>Wpisz nazwę użytkownika:</label>
+      <input id="username" type="text" class="form-control" required name="username" [(ngModel)]="model.username" placeholder="Nazwa użytkownika">
+    </div>
+
+    <div class="form-group">
+      <label>Wpisz hasło:</label>
+      <input id="password" type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Hasło">
+    </div>
+
+    <div class="form-group">
+        <label>Wybierz płeć:</label>
+        <select class="custom-select" [(ngModel)]="model.gender" required name="gener-select">
+          <option *ngFor="let gender of genders">{{gender}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+      <label>Wpisz datę urodzenia (RRRR-MM-DD):</label>
+      <input id="birthdate" type="text" class="form-control" required name="dateofbirth" [(ngModel)]="model.dateofbirth" placeholder="Data ur. (RRRR-MM-DD)">
+    </div>
+
+    <div class="form-group">
+      <label>Podaj wzrost w metrach: (np. 1.75)</label>
+      <input id="height" type="text" class="form-control" required name="height" [(ngModel)]="model.height" placeholder="wzrost [m]">
+    </div>
+
+    <div class="form-group">
+      <label>Podaj masę ciała w kilogrmach: (np. 68.4)</label>
+      <input id="weight" type="text" class="form-control" required name="weight" [(ngModel)]="model.weight" placeholder="masa [kg]">
+    </div>
+
+    <div class="form-group">
+      <label>Wybierz stopień aktywności fizycznej (PAL):</label>
+      <select class="custom-select" [(ngModel)]="model.pal" required name="gener-select">
+        <option *ngFor="let pal of pals" [ngValue]="pal.value">{{pal.text}}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-center">
+      <button class="btn btn-success mr-2" type="submit">Zarejestruj</button>
+      <button class="btn btn-warning" type="button" (click)="cancel()">Anuluj</button>
+    </div>
+
+  </form>

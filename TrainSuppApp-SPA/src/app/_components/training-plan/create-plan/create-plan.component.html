@@ -1,0 +1,25 @@
+<ng-container *ngIf="!dayMode">
+  <form #creatingForm="ngForm">
+    <h2 class="text-center text-primary">Tworzenie planu</h2>
+    <hr>
+
+    <div class="form-group">
+      <label for="typeSelect">Wybierz cel treningowy:</label>
+      <select class="custom-select" id="typeSelect" [(ngModel)]="model.goal" name="typeSelector">
+          <option *ngFor="let g of goals" [ngValue]="g.value">
+              {{g.name}}
+          </option>
+      </select>
+    </div>
+
+    <div class="form-group text-center">
+      <button class="btn btn-success btn-block" type="submit" (click)="dayToggle()" >Stwórz plan</button>
+      <button class="btn btn-danger btn-block" type="button" (click)="cancel($event)">Anuluj tworzenie</button>
+    </div>
+
+  </form>
+</ng-container>
+<!-- ------------------------------------------------------------------------ -->
+<ng-container *ngIf="dayMode">
+  <app-add-day (cancelDay)="cancelDayMode($event)" (finishCreatingPlan)="finishCreating($event)"></app-add-day>
+</ng-container>
